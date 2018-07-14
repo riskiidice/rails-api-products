@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :punits
   namespace :admin do
     resources :categories_products
     resources :categories
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
       resources :images
       resources :categories
       resources :products
+      resources :punits
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
