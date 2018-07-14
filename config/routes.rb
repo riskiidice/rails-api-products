@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :punits
   namespace :admin do
     resources :categories_products
     resources :categories
