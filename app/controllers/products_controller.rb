@@ -1,11 +1,12 @@
+include ActionView::Helpers::DateHelper
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
-
+  #require 'rails_helper'
   # GET /products
   def index
     @products = Product.all
 
-    render json: @products.to_json(:include => {:categories => { :only => [:name] }},:include => {:images => { :only => [ :name, :picture]}},:only => [:id,:name, :price, :amount])
+    render json: @products.to_json(:include => {:categories => { :only => [:name] }},:include => {:images => { :only => [ :name, :picture]}},:only => [:id,:name, :price, :amount,:updated_at])
   end
 
   # GET /products/1
