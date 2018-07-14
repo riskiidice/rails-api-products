@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
 
-    render json: @products.to_json(:include => {:categories => { :only => [:name] }},:include => {:images => { :only => [ :name, :picture]}},:only => [:id,:name, :price, :amount,:updated_at])
+    #render json: @products.to_json(:include => {:categories => { :only => [:name] }},:include => {:images => { :only => [:picture]}},:only => [:id,:name, :price, :amount,:updated_at])
+    render json: @products.to_json(:include => {:categories => { :only => [:name] },:images => { :only => [:picture]}},:only =>  [:id,:name, :price, :amount,:updated_at])
   end
 
   # GET /products/1
